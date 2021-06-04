@@ -1,0 +1,23 @@
+[
+    {
+        "greating": "Herr",
+        "firstName": "",
+        "lastName": "",
+        "email": "", 
+        "errorMessages": "Vorname darf nicht leer sein Nachname darf nicht leer sein E-Mail darf nicht leer sein"
+    },
+    {
+        "greating": "Herr",
+        "firstName": "fiftyonecharsnameaddsdsdfdsfddddddddddddddddddddddd",
+        "lastName": "fiftyonecharsnameaddsdsdfdsfddddddddddddddddddddddd",
+        "email": "somemailgmail.com", 
+        "errorMessages": "First name must be maximum 50. Last name must be maximum 50. Bitte gib eine valide Email-Adresse ein, sodass wir Dir Deine persönliche Übersicht zusenden können"
+    },
+    {
+        "greating": "Herr",
+        "firstName": "1 name",
+        "lastName": "$# name",
+        "email": "somemail@gmail", 
+        "errorMessages": "Der Vorname sollte nur aus Buchstaben bestehen Der Nachname sollte nur aus Buchstaben bestehen Bitte gib eine valide Email-Adresse ein, sodass wir Dir Deine persönliche Übersicht zusenden können"
+    }
+]

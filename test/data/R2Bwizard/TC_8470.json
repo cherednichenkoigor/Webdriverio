@@ -1,0 +1,26 @@
+[
+    {
+    "householdIncome":"",
+    "applicableResources":250000,
+    "errorMessage":"Das Haushalts-Einkommen darf nicht leer sein"
+    },
+    {
+    "householdIncome":79999,
+    "applicableResources":250000,
+    "errorMessage":"Das Haushalts-Einkommen muss zwischen 80'000 und 500'000 sein."
+    },
+    {
+    "householdIncome":100000,
+    "applicableResources":"",
+    "errorMessage":"Einsetzbare Mittel dürfen nicht leer sein"
+    },
+    {
+    "householdIncome":100000,
+    "applicableResources":24999,
+    "errorMessage":"Einsetzbare Mittel müssen zwischen 25'000 und 500'000 sein."
+    },
+    {
+    "householdIncome":500001,
+    "applicableResources":500001
+    }
+]
