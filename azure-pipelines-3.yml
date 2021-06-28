@@ -11,7 +11,7 @@ schedules:
     - master
 
 pool:
-  vmImage: macOS-latest
+  vmImage: windows-latest
 
 steps:
 - task: NodeTool@0
@@ -24,9 +24,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    npx wdio run ./configFiles/wdio.safari-d.conf.js --spec maizon.e2e.js || true
-    npx wdio run ./configFiles/wdio.safari-t.conf.js --spec maizon.e2e.js || true
-    npx wdio run ./configFiles/wdio.safari-m.conf.js --spec maizon.e2e.js || true
+    npx wdio run ./configFiles/wdio.default.conf.js --spec wizardTests.e2e.js || true
   displayName: 'npm run tests'   
 
 - task: CopyFiles@2
@@ -39,7 +37,7 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
-    publishLocation: 'Container' 
+    publishLocation: 'Container'
 
 - task: PublishTestResults@2
   inputs:

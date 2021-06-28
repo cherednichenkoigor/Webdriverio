@@ -1,8 +1,6 @@
 import chai from 'chai';
 const HomePage = require('../pageobjects/homeMaizonPage.page');
 const WizardPage = require('../pageobjects/R2Bwizard.page');
-import { FinancialDada } from "../model/R2Bwizard/financialData";
-import { PersonalData } from "../model/R2Bwizard/personalData";
 
 
 describe('Compare R2B wizard steps screenshots', () => {
@@ -17,20 +15,15 @@ describe('Compare R2B wizard steps screenshots', () => {
                 WizardPage.elMessengerButton,
                 WizardPage.elMessageBubble]               
         })).toEqual(0);       
-    }
-
-    var financialData = new FinancialDada({
-        householdIncome: "150000",
-        applicableResources: "50000"
-    });
+    }    
   
-    var personalData = new PersonalData({
+    var personalData = {
         greating: "Herr",
         firstName: "Testfirstname",
         lastName: "Testlastname",
         email: 'test-smth@testmail.testcom',
         phone: "+41 79 111 11 11"
-    });
+    };
     
     beforeEach(() => {
     });
@@ -43,7 +36,8 @@ describe('Compare R2B wizard steps screenshots', () => {
         HomePage.clickCookieButton();  
     });
 
-    it('Compare R2B Financing step', () => {          
+    it('Compare R2B Financing step', () => {
+        browser.pause(2000);          
         HomePage.clickKaufkraftBerechnen();
         WizardPage.waitProgressbar();
         browser.pause(500);

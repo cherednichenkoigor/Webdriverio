@@ -46,3 +46,4 @@ steps:
     mergeTestResults: true
     failTaskOnFailedTests: true
     publishRunAttachments: true
+

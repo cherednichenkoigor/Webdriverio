@@ -16,8 +16,14 @@ class HomePage extends Page{
     
     clickCookieButton(){
         this.elCookieBtn.waitForDisplayed();  
+        browser.pause(1500);
         this.elCookieBtn.click();
-    }    
+    } 
+    
+    clickCookieButtonForFunctionalTests(){
+        if(this.elCookieBtn.isExisting())  
+            this.elCookieBtn.click();
+    }
 
     clickKaufkraftBerechnen(){
         this.elKaufkraftBtn.waitForDisplayed();

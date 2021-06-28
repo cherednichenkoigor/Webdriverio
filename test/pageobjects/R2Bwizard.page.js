@@ -73,6 +73,13 @@ class WizardPage extends Page{
         //browser.pause(500);
     }
 
+    fillFinancialDataDesctop(financialData){
+        AppHelper.fillField(this.elIncomeInput, financialData.householdIncome);
+        browser.pause(500);
+        AppHelper.fillField(this.elAssetsInput, financialData.applicableResources);
+        //browser.pause(500);
+    }
+
     waitBtnLoader(){
         $("button .v-btn__loader").waitForExist({ reverse: true });             
     }
@@ -82,6 +89,7 @@ class WizardPage extends Page{
     }
     clickConfirmFinancingStep(){
         this.waitBtnLoader();
+        this.waitProgressbar();
         //this.closeMessagePopUp();
         $("//span[contains(text(),'Weiter')]").click();
     }
@@ -156,11 +164,11 @@ class WizardPage extends Page{
     }
 
     closeMessagePopUp() {
-        this.elMessageBubble.waitForDisplayed();
-        browser.execute(() => {
-            const elemToRemove = document.querySelector("[title='Message bubble']");
-            elemToRemove.remove();
-        });         
+        // this.elMessageBubble.waitForDisplayed({timeout: 20000});
+        // browser.execute(() => {
+        //     const elemToRemove = document.querySelector("[title='Message bubble']");
+        //     elemToRemove.remove();
+        // });         
         this.elMessengerButton.waitForDisplayed();
         browser.execute(() => {
             const elemToRemove = document.querySelector("[title='Messenger button']").parentNode.parentNode;

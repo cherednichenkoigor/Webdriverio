@@ -1,0 +1,14 @@
+[
+    {
+        "propertyType":"House",
+        "propertyTypeGerman":"Einfamilienhaus"    
+    },
+    {
+        "propertyType":"Apartment",    
+        "propertyTypeGerman":"Wohnung" 
+    },
+    {
+        "propertyType":"Townhouse",
+        "propertyTypeGerman":"Reihenhaus"    
+    }
+]

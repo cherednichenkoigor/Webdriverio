@@ -1,4 +1,6 @@
 const { join } = require('path');
+const fs = require("fs")
+
 
 exports.config = {
     //
@@ -238,8 +240,15 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: function (suite) {
+        fs.mkdir("./.tmp/FailedTestsScreenshots", { recursive: true }, function(err) {
+            if (err) {
+              console.log(err)
+            } else {
+              console.log("New directory successfully created.")
+            }
+          })
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
@@ -261,9 +270,9 @@ exports.config = {
      * Function to be executed after a test (in Mocha/Jasmine).
      */
     afterTest: function(test, context, { error, result, duration, passed, retries }) {
-       if(error){
+       if(error || !passed){
            var rand = Math.floor(Math.random() * 1000);
-           browser.saveScreenshot(`./.tmp/FailedTest_${test.title}.${rand}.png`);
+           browser.saveScreenshot(`./.tmp/FailedTestsScreenshots/${test.title}.${rand}.png`);
        }    
     },
 

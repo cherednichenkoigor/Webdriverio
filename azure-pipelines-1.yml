@@ -45,4 +45,4 @@ steps:
     testResultsFiles: '**/results-*.xml'    
     mergeTestResults: true
     failTaskOnFailedTests: true
-    publishRunAttachments: true
+    publishRunAttachments: true 
